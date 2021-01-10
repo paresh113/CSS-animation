@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+    <div class="content">
+        <!-- left side starts  -->
+        <div class="box1">
+
+            <form id="form1" runat="server">
+                <h3 style="display: inline;">Choose an image:</h3>
+                <input type='file' id="imgInp" />
+                
+            </form>
+
+
+            <br>
+            <div class="img_text_show" id="img_text_show"  >
+                <img src="#" alt="" name="" id="blah" height="100%" width="100%" alt="Your Logo">
+                <p class="fancy text_style" id="show" style="word-wrap: break-word; width: 40%; margin: 0 auto; padding-right: 20px"></p>
+                
+                
+            </div>
+        </div>
+        <!-- left side ends -->
+
+
+
+        <!-- right side starts -->
+        <div class="box2">
+
+
+            
+            <!-- <input type="text" name="text_input" id="text_input" onkeydown="showValue()"> -->
+            <textarea name="text_input" id="text_input" cols="55" rows="4" onkeyup="showValue()"></textarea>
+            <br>
+
+            <p style = " padding : 20px">STYLE</p>
+            <div>
+                <button class="button button1" onclick="defaultfont()">DEAFULT</button>
+                <button class="button button2" onclick="verdanaFont()">verdana</button>
+              
+
+            </div>
+            <div>
+                <button class="button button1" onclick="impactFont()">Impact</button>
+                <button class="button button2" onclick = "fancyFont()">Fancy</button>
+            </div>
+            <div>
+                
+                <button class="button button1" onclick="ConsolasFont()">Consolas</button>
+                <button class="button button2" onclick="GaramondFont()">Garamond</button>
+            </div>
+            <p style = " padding : 20px">ANIMATION</p>
+            <div>
+                <button class="button button1" onclick="noneFunction()">NONE</button>
+                <button class="button button2" onclick="textFunction()">TEXT ANIMATION</button>
+
+            </div>
+            <div>
+                <button class="button button1" onclick="raibowFunction()">RAINBOW</button>
+                <button class="button button2" onclick="fillFunction()">TEXT FILL</button>
+
+            </div>
+            <div>
+                <button class="button button1" onclick="moveFunction()">TEXT MOVE</button>
+                <button class="button button2" onclick="wavyFunction()">WAVY</button>
+            </div>
+        </div>
+        <!-- right side ends -->
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<script src="./script.js"></script>
+
+
+</body>
+</html>

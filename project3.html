@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+        /* reset css starts  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background-color: black;
+        }
+
+        .content {
+            width: 100%;
+        }
+        h3{
+            color: white;
+        }
+        /* reset css ends  */
+
+
+        /* lest side css starts  */
+
+        .box1 {
+            /* background-color: red; */
+            float: left;
+            width: 50%;
+            height: 100vh;
+            padding: 2%;
+            position: relative;
+        }
+
+        .img_text_show{
+            
+            height: 40%;
+            width: 60%;
+            position: relative;
+  
+        }
+
+        .img_text_show p {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+
+
+
+        /* lest side css ends */
+
+
+
+        /* right side css starts  */
+        .box2 {
+            /* background-color: green; */
+            background-color: #423D3D;
+            float: right;
+            width: 50%;
+            /* margin-right: 1%; */
+            height: 100vh;
+            padding: 2%;
+            
+
+        }
+        /* right side css ends */
+
+
+        /* text style starts  */
+
+        .text_style{
+            color: white; font-weight: bold; font-size: 25px; text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
+        }
+        /* text style ends */
+
+
+
+
+
+
+
+
+
+
+
+        /* wave animation starts  */
+
+        h1{
+     color: white;
+     font-size: 4rem;
+     font-family: sans-serif;
+     text-align: center;
+     line-height: 100vh;
+
+ }
+        span{
+     opacity: 0;
+     transition: all 0.6s ease;
+     /* transform: translateY(80px); */
+     display: inline-block;
+
+ }
+ span.fade{
+     opacity: 1;
+     transform: translateY(80px);
+ 
+     transform: translateY(-80px);
+ }
+        /* wave animation ends */
+
+
+
+
+
+
+        /* rainbow starts  */
+        .rainbow{
+		animation: rainbow 2.5s linear;
+		animation-iteration-count: infinite;
+}
+@keyframes rainbow{
+		100%,0%{
+			color: rgb(255,0,0);
+		}
+		8%{
+			color: rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+		}
+		66%{
+			color: rgb(0,0,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+		}
+}
+
+        /* rainbow ends */
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <!-- left side starts  -->
+        <div class="box1">
+
+            <form id="form1" runat="server">
+                <h3 style="display: inline;">Choose an image:</h3>
+                <input type='file' id="imgInp" />
+                
+            </form>
+
+
+            <br>
+            <div class="img_text_show" id="img_text_show"  >
+                <img src="#" alt="" name="" id="blah" height="100%" width="100%" alt="Your Logo">
+                <p class="fancy text_style" id="show" style="word-wrap: break-word; "></p>
+                
+            </div>
+        </div>
+        <!-- left side ends -->
+
+
+
+        <!-- right side starts -->
+        <div class="box2">
+
+
+            
+            <!-- <input type="text" name="text_input" id="text_input" onkeydown="showValue()"> -->
+            <textarea name="text_input" id="text_input" cols="55" rows="4" onkeydown="showValue()"></textarea>
+            <br>
+
+            <h3>Style</h3>
+            <button onclick="waveFunction()">Wave</button>
+            <button onclick="raibowFunction()">Rainbow</button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <h3>Animation</h3>
+        </div>
+        <!-- right side ends -->
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+    <script>
+
+function showValue() {
+ 
+  var name = document.getElementById('text_input').value;
+  document.getElementById('show').innerHTML = name;
+
+}
+
+function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                        console.log(document.getElementById('blah').src)
+                    }
+                    
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            
+        
+            
+            $("#imgInp").change(function(){
+                readURL(this);
+
+            });
+    </script>
+
+
+<!-- wave animation script starts  -->
+
+<script>
+
+    function waveFunction(){
+
+        document.getElementById("show").classList.add("text_style");
+        document.getElementById("show").classList.remove("rainbow");
+        const text = document.querySelector('.fancy');
+console.log(text);
+const strText = text.textContent;
+console.log(strText);
+const splitText = strText.split("");
+console.log(splitText);
+text.textContent = "";
+
+for(let i =0; i < splitText.length; i++){
+    text.innerHTML += "<span>" + splitText[i] + "</span>";
+}
+
+let char = 0;
+let timer = setInterval(onTick,50);
+
+function onTick(){
+    const span = text.querySelectorAll('span')[char];
+    span.classList.add('fade');
+    char++;
+    if(char === splitText.length){
+        complete();
+        return;
+    }
+}
+function complete(){
+    clearInterval(timer);
+    timer = null;
+}
+    }
+</script>
+
+<!-- wave animation script ends  -->
+
+
+<!-- rainbow animation script starts  -->
+
+<script>
+
+    function raibowFunction(){
+
+        console.log("ok");
+        console.log(document.getElementById("show").classList.add("rainbow"));
+        // element.classList.add("my-class");
+    }
+</script>
+
+<!-- rainbow animation script ends -->
+
+
+
+
+    
+</body>
+</html>

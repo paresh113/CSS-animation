@@ -1,0 +1,279 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: black;
+}
+
+.content {
+  width: 100%;
+}
+h3{
+  color: white;
+}
+
+/* left side css starts  */
+
+.box1 {
+  /* background-color: red; */
+  float: left;
+  width: 50%;
+  height: 100vh;
+  padding: 2%;
+  position: relative;
+}
+
+.img_text_show{
+  
+  height: 50%;
+  width: 80%;
+  position: relative;
+
+}
+p{
+  color: white;
+}
+
+.img_text_show p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: Arial;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* left side css ends */
+
+
+/* right side css starts  */
+.box2 {
+  /* background-color: green; */
+  background-color: #5e5a5a4d;
+  float: right;
+  width: 50%;
+  /* margin-right: 1%; */
+  height: 100vh;
+  padding: 2%;
+}
+/* right side css ends */
+
+
+/* text style starts  */
+
+.text_style{
+  color: white; font-weight: bold; font-size: 25px; text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
+}
+/* text style ends */
+
+/* style for button starts  */
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    width: 200px;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 6px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #555555; 
+    color: black; 
+    border: 2px solid #448847;
+}
+
+.button1:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.button2 {
+    background-color: #555555; 
+    color: black; 
+    border: 2px solid #448847;
+}
+
+.button2:hover {
+    background-color: #555555;
+    color: white;
+}
+/* style for button ends  */
+
+
+/* defaultFont style starts */
+
+.defaultFont{
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+/* defaultFont style ends */
+
+/* wave animation starts  */
+
+h1{
+  color: white;
+  font-size: 4rem;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 100vh;
+
+}
+span{
+  opacity: 0;
+  transition: all 0.6s ease;
+  /* animation-iteration-count: infinite; */
+  /* transform: translateY(80px); */
+  display: inline-block;
+
+}
+span.fade{
+  opacity: 1;
+  transform: translateY(80px);
+
+  transform: translateY(0px);
+}
+/* wave animation ends */
+
+
+/* move animation start */
+
+.test1 {
+  position: relative;
+  animation: myfirst 2s infinite;
+  /* animation-direction: alternate; */
+  animation-timing-function: linear;
+  
+}
+
+@keyframes myfirst {
+  from {left: 150px;}
+  to {left: 380px;}
+}
+
+/* move animation ends */
+
+
+/* rainbow starts  */
+.rainbow{
+animation: rainbow 2.5s linear;
+animation-iteration-count: infinite;
+}
+@keyframes rainbow{
+      100%,0%{
+      color: rgb(255,0,0);
+      }
+      8%{
+      color: rgb(255,127,0);
+      }
+      16%{
+      color: rgb(255,255,0);
+      }
+      25%{
+      color: rgb(127,255,0);
+      }
+      33%{
+      color: rgb(0,255,0);
+      }
+      41%{
+      color: rgb(0,255,127);
+      }
+      50%{
+      color: rgb(0,255,255);
+      }
+      58%{
+      color: rgb(0,127,255);
+      }
+      66%{
+      color: rgb(0,0,255);
+      }
+      75%{
+      color: rgb(127,0,255);
+      }
+      83%{
+      color: rgb(255,0,255);
+      }
+      91%{
+      color: rgb(255,0,127);
+      }
+}
+
+/* rainbow ends */
+
+/* text fill animation style starts */
+.text_fill {
+  
+    font-size: 2em;
+    text-transform: uppercase;
+    /* color:rgba(255,255,255,.1); */
+    background-image: url(blue_color.jpg);
+    background-size: 100% 50px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation: stripes .1s linear infinite;
+    animation: stripes 1s linear infinite;
+
+}
+
+@-webkit-keyframes stripes {
+  100% {
+    background-position: 0 -50px;
+  }
+}
+
+@keyframes stripes {
+  100% {
+    background-position: 0 -50px;
+  }
+}
+/* text fill animation style ends */
+
+
+
+/* wavy animation style starts here  */
+b { 
+
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s; 
+} 
+b.each { 
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 2em;
+    /* text-transform: uppercase; */
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--j)); 
+} 
+
+@keyframes animate { 
+    0% { 
+      background: transparent;  
+      transform: translateY(0); 
+    } 
+    50% { 
+      background: green;   
+      transform: translateY(-25px); 
+    } 
+    100% { 
+      background: yellow;  
+      transform: translateY(0); 
+    } 
+}
+
+
+/* wavy animation style ends here  */
