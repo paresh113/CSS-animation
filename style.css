@@ -213,44 +213,39 @@ animation-iteration-count: infinite;
 
 /* rainbow ends */
 
-/* text fill animation style starts */
-.text_fill {
-  
-    font-size: 2em;
-    text-transform: uppercase;
-    /* color:rgba(255,255,255,.1); */
-    background-image: url(blue_color.jpg);
-    background-size: 100% 50px;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-animation: stripes .1s linear infinite;
-    animation: stripes 1s linear infinite;
+/* text glow animation style starts */
 
+
+.text_glow{
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes stripes {
-  100% {
-    background-position: 0 -50px;
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
 
-@keyframes stripes {
-  100% {
-    background-position: 0 -50px;
-  }
-}
-/* text fill animation style ends */
+/* text glow animation style ends */
 
 
 
 /* wavy animation style starts here  */
-b { 
+.wavy { 
 
     position: relative;
     display: inline-block;
     transition: all 0.5s; 
 } 
-b.each { 
+.wavy.each { 
     position: relative;
     display: inline-block;
     color: #fff;

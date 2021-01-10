@@ -6,6 +6,7 @@ function showValue() {
 
     if(document.getElementById('show').innerHTML == ''){
       document.getElementById("show").classList.add("defaultFont");
+      noneFunction();
     }
 
     // console.log(document.getElementById('show').innerHTML);
@@ -53,8 +54,8 @@ function showValue() {
 function noneFunction(){
     document.getElementById("show").classList.remove("rainbow");
     document.getElementById("show").classList.remove("test1");
-    document.getElementById("show").classList.remove("b");
-    document.getElementById("show").classList.remove("text_fill");
+    document.getElementById("show").classList.remove("wavy");
+    document.getElementById("show").classList.remove("text_glow");
     document.getElementById("show").classList.remove("span");
 }
 // none animation ends
@@ -64,13 +65,11 @@ function noneFunction(){
 
  function moveFunction(){
     document.getElementById("show").classList.remove("rainbow");
-    document.getElementById("show").classList.remove("b");
-    document.getElementById("show").classList.remove("text_fill");
+    document.getElementById("show").classList.remove("wavy");
+    document.getElementById("show").classList.remove("text_glow");
     document.getElementById("show").classList.remove("span");
     document.getElementById("show").classList.add("test1");
-    // const text = document.querySelector('.fancy');
-    // console.log("okkk");
-    // text.innerHTML = "<p class='test1'>" +text.innerHTML +"</p>";
+    
  }
 
   function readURL(input) {
@@ -97,8 +96,8 @@ function textFunction(){
 
       document.getElementById("show").classList.remove("rainbow");
       document.getElementById("show").classList.remove("test1");
-      document.getElementById("show").classList.remove("b");
-      document.getElementById("show").classList.remove("text_fill");
+      document.getElementById("show").classList.remove("wavy");
+      document.getElementById("show").classList.remove("text_glow");
       // document.getElementById("show").classList.remove("span");
       document.getElementById("show").classList.add("span");
 
@@ -136,25 +135,46 @@ function textFunction(){
 
 
 //  rainbow animation funtion start from here
-    function raibowFunction(){
+function raibowFunction(){
       // console.log("for checking purpose");
-      document.getElementById("show").classList.remove("test1");
-      document.getElementById("show").classList.remove("b");
-      document.getElementById("show").classList.remove("text_fill");
-      document.getElementById("show").classList.remove("span");
-      document.getElementById("show").classList.add("rainbow");
+    document.getElementById("show").classList.remove("test1");
+    document.getElementById("show").classList.remove("wavy");
+    document.getElementById("show").classList.remove("text_glow");
+    document.getElementById("show").classList.remove("span");
+    document.getElementById("show").classList.add("rainbow");
         // element.classList.add("my-class");
-    }
+   }
 //  rainbow animation funtion end here
 
 //  Text fill animation funtion start from here
-function fillFunction(){
+function glowFunction(){
   //console.log("it's working");
     document.getElementById("show").classList.remove("rainbow");
     document.getElementById("show").classList.remove("test1");
-    document.getElementById("show").classList.remove("b");
+    
+    const text = document.getElementById("show");
+    const p = document.getElementsByTagName('p');
+    console.log(p);
+    const b = text.querySelectorAll('b');
+    // console.log(b);
+
+    console.log(document.querySelectorAll('b')[1]);
+    const l = document.getElementsByClassName("each").length;
+
+    for(var i=0; i< l; i++){
+      document.querySelectorAll('b')[i].classList.remove("each");
+    }
+    if(document.querySelector('b')){
+
+      document.querySelector('b').classList.remove("each");
+    }
+ 
+
+    document.getElementById("show").classList.remove("wavy");
+    // document.getElementsByTagName("show").classList.remove("wavy");
+    
     document.getElementById("show").classList.remove("span");
-    document.getElementById("show").classList.add("text_fill");
+    document.getElementById("show").classList.add("text_glow");
 }
 
 //  text fill animation funtion ends here
@@ -166,9 +186,9 @@ function wavyFunction(){
 
     document.getElementById("show").classList.remove("rainbow");
     document.getElementById("show").classList.remove("test1");
-    document.getElementById("show").classList.remove("text_fill");
+    document.getElementById("show").classList.remove("text_glow");
     document.getElementById("show").classList.remove("span");
-    document.getElementById("show").classList.add("b");
+    document.getElementById("show").classList.add("wavy");
 
     const text = document.querySelector('.fancy');
     console.log(text);
@@ -179,7 +199,9 @@ function wavyFunction(){
     text.textContent = "";
     var j;
     for(let i =0; i < splitText.length; i++){
-        text.innerHTML += "<b  style='--j:i+1;'>" + splitText[i] + "</b>";
+        text.innerHTML += "<b class = 'wavy'; style='--j:i+1;'>" + splitText[i] + "</b>";
+        
+       
     }
     let char = 0;
     let timer = setInterval(onTick,50);
