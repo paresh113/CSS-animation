@@ -1,2 +1,2 @@
-# Web_Assignment
+# CSS - Animation
 A frontend web design using HTML, CSS and Javascript
